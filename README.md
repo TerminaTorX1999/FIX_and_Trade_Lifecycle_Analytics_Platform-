@@ -1,4 +1,4 @@
-FIX and Trade Lifecycle Analytics Platform
+#FIX and Trade Lifecycle Analytics Platform
 
 Simulates an event-driven trading order lifecycle and provides basic tools to analyse order logs using Bash.
 
