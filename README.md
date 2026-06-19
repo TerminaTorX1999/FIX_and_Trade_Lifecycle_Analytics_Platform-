@@ -1,4 +1,4 @@
-# Trading Order Log Simulation & Troubleshooting Toolkit
+# FIX and Trade Lifecycle Analytics Platform 
 
 Simulates an event-driven trading order lifecycle and provides basic tools to debug logs using Bash.
 
