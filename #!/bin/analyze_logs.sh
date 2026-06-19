@@ -1,13 +1,20 @@
 #!/bin/bash
 
-# Find incomplete orders (no FILL or CANCEL)
-echo "Incomplete Orders:"
-grep "ORDER_ID" logs.txt | grep -v "FILL" | grep -v "CANCEL" | awk '{print $1}' | sort | uniq
+echo "Event Counts:"
+grep "STATUS=" logs.txt | sort | uniq -c
 
 echo ""
-echo "Order Event Counts:"
-grep "STATUS" logs.txt | awk '{print $2}' | sort | uniq -c
+echo "Rejected Orders:"
+grep "STATUS=REJECT" logs.txt | wc -l
 
 echo ""
-echo "Sample Trace for ORDER_ID=10:"
+echo "Cancelled Orders:"
+grep "STATUS=CANCEL" logs.txt | wc -l
+
+echo ""
+echo "Partial Fills:"
+grep "STATUS=PARTIAL_FILL" logs.txt | wc -l
+
+echo ""
+echo "Sample Order:"
 grep "ORDER_ID=10" logs.txt
